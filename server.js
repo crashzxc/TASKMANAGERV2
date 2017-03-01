@@ -64,7 +64,7 @@ router.route('/TaskManager/addTaskItem')
     });
 
 //get all tasks in firebase
-app.route('/API/TaskManager/getAllTasks')
+app.route('/TaskManager/getAllTasks')
     .get(function (req,res){
         var ref = databaseReference.ref('tasks');
 
