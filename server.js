@@ -60,11 +60,10 @@ router.route('/TaskManager/addTaskItem')
                 res.send(err);
             res.json({ message: 'Task Item data created in Firebase' });
         });
-
     });
 
 //get all tasks in firebase
-app.route('/TaskManager/getAllTasks')
+router.route('/TaskManager/getAllTasks')
     .get(function (req,res){
         var ref = databaseReference.ref('tasks');
 
@@ -83,7 +82,6 @@ app.route('/API/TaskManager/updateTask/:id')
         taskRef.update({
             "task_name":req.body.taskName
         });
-
         res.json({message:'successfully updated id:'+id+' in firebase'});
     });
 
