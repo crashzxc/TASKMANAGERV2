@@ -63,7 +63,7 @@ router.route('/TaskManager/addTaskItem')
     });
 
 //get all tasks in firebase
-router.route('/TaskManager/getAllTasks')
+app.route('/API/TaskManager/getAllTasks')
     .get(function (req,res){
         var ref = databaseReference.ref('tasks');
 
@@ -106,7 +106,7 @@ router.get('/', function(req, res) {
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
-app.use('/api', router);
+//app.use('/api', router);
 
 // START THE SERVER
 // =============================================================================
