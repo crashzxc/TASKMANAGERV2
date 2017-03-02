@@ -63,7 +63,7 @@ app.route('/API/TaskManager/addTaskItem')
     });
 
 //get all tasks in firebase
-app.route('/API/TaskManager/getAllTasks')
+router.route('/TaskManager/getAllTasks')
     .get(function (req,res){
         var ref = databaseReference.ref('tasks');
 
@@ -74,7 +74,7 @@ app.route('/API/TaskManager/getAllTasks')
         });
     });
 
-app.route('/API/TaskManager/updateTask/:id')
+app.route('/TaskManager/updateTask/:id')
     .put(function (req,res){
         var id = req.params.id;
         var taskRef = databaseReference.ref('tasks/'+id);
@@ -106,7 +106,7 @@ router.get('/', function(req, res) {
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
-//app.use('/api', router);
+app.use('/api', router);
 
 // START THE SERVER
 // =============================================================================
